@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Chat Log</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="icon" type="image/png" href="/icon.png" />
+  </head>
+  <body>
+    <div
+      class="p-4 bg-gray-100 border-2 border-black rounded-lg shadow-md mt-7 w-[30%] mx-auto flex flex-col"
+    >
+      <form action="/chats" method="post">
+        <div class="">
+          <h1 class="text-lg font-semibold mb-2">
+            <input
+              placeholder="From:"
+              type="text"
+              name="from"
+              id=""
+              class="border w-full rounded-lg px-3"
+            />
+          </h1>
+          <textarea
+            class="font-light text-lg text-white bg-blue-300 placeholder:text-white rounded-xl w-full p-4"
+            rows="10"
+            name="msg"
+            placeholder="Enter message here ->"
+          ></textarea>
+          <h1 class="text-lg font-semibold mt-2">
+            <input
+              placeholder="To:"
+              type="text"
+              name="to"
+              id=""
+              class="border w-full rounded-lg px-3"
+            />
+          </h1>
+        </div>
+        <div class="flex justify-center mt-3">
+          <button
+            class="border px-10 text-lg rounded-lg font-medium hover:bg-gray-400 hover:text-white transition cursor-pointer hover:font-light duration-300"
+          >
+            POST
+          </button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

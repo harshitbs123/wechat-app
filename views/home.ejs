@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="icon" type="image/png" href="/icon.png" />
+  </head>
+  <body>
+    <div class="m-5 flex items-center justify-between">
+      <div><img src="/icon.png" alt="" class="h-10 rounded-lg" /></div>
+      <!-- <div><span class="text-xl">WeChat</span></div> -->
+      <div
+        class="both h-5 overflow-hidden cursor-pointer group nohemi-font font-extralight text-black"
+      >
+        <div
+          class="texts text-sm transition-all duration-300 group-hover:-translate-y-5"
+        >
+          <div class="text1">WeCHAT</div>
+
+          <div class="text2 text-black">WeCHAT</div>
+        </div>
+      </div>
+      <!--  -->
+      <div>
+        <form action="/chats/new" method="GET" class="ml-auto">
+          <button
+            class="border px-1 rounded-lg text-xl font-light hover:bg-gray-400 hover:text-white transition cursor-pointer hover:font-light duration-300"
+          >
+            Create New Post
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <% for (chat of chats) {  %>
+    <div
+      class="p-4 bg-gray-100 border-2 border-black rounded-lg shadow-md mt-7 w-[30%] mx-auto flex flex-col"
+    >
+      <div class="flex-4">
+        <h1 class="text-lg font-semibold">From : <%= chat.from %></h1>
+        <h1 class="text-xl font-light text-white bg-blue-300 p-4 rounded-xl">
+          <%= chat.msg %>
+        </h1>
+        <h1 class="text-lg font-semibold">Received By : <%= chat.to %></h1>
+      </div>
+      <span class="border-[1px] border-black mb-2 mt-2"></span>
+      <div class="flex-1 flex">
+        <div>
+          <h1 class="text-sm font-light">
+            <%= chat.Date.toString().split(" ")[4] %>
+          </h1>
+        </div>
+        <div class="ml-auto">
+          <form action="/chats/<%=chat._id%>" method="get">
+            <button
+              class="border px-1 rounded-lg font-medium hover:bg-gray-400 hover:text-white transition cursor-pointer hover:font-light duration-300"
+            >
+              Edit Chat
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <% } %>
+  </body>
+</html>
