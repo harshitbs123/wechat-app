@@ -22,6 +22,7 @@ WeChat is a simple chat application built while learning backend development wit
 * **EJS** — Server-side templating
 * **Method-Override** — Used to support PATCH and DELETE requests from HTML forms
 * **HTML/CSS** — Frontend
+* **Tailwind CSS ** — Frontend Design
 
 ## 📚 What I Learned
 
